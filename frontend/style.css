@@ -1,0 +1,168 @@
+/* body */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Shadows Into Light", cursive;
+}
+/* button */
+.btn-custom {
+  background-color: #74c0fc;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+.btn-custom:hover {
+  background-color: #94c3e6;
+}
+.btn-custom:focus,
+.btn-custom:active {
+  outline: none;
+  box-shadow: none;
+}
+/* header */
+#logo {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 3rem;
+}
+.logo_name {
+  font-family: "Whisper", cursive;
+  font-weight: 900;
+  color: #74c0fc;
+  font-size: 2rem;
+}
+#SignIn {
+  font-family: "Shadows Into Light", cursive;
+}
+
+/* main */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.image-container img {
+  height: 18rem;
+  width: 18rem;
+  cursor: pointer;
+  display: block;
+  border-radius: 1rem;
+}
+.image-container img:hover {
+  box-shadow: 0px 4px 7px rgb(0, 0, 0);
+}
+.container2 {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Shadows Into Light", cursive;
+}
+
+/* footer */
+.footer {
+  margin-top: 1rem;
+  font-family: "Shadows Into Light", cursive;
+  background-color: #e8eaed;
+}
+.p1 {
+  padding: 0px;
+}
+.About,
+.signUp_btn {
+  text-align: center;
+}
+
+.contact {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.mail {
+  text-align: center;
+}
+.mail a {
+  text-decoration: none;
+}
+.links {
+  gap: 1rem;
+  display: flex;
+}
+
+li a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+/* max-width 450 */
+
+@media (max-width: 450px) {
+  #SignIn {
+    display: none;
+  }
+}
+/* max-width 767 */
+@media (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
+  .p1 {
+    flex-direction: column;
+  }
+  .logo_name {
+    display: none;
+  }
+}
+/* min -width 502 and max-width 768 */
+
+@media (min-width: 502px) and (max-width: 768px) {
+  .image-container img {
+    height: 25rem;
+    width: 25rem;
+  }
+}
+/* min -width 780 and max-width 980px */
+
+@media (min-width: 780px) and (max-width: 980px) {
+  .image-container img {
+    height: 20rem;
+    width: 20rem;
+  }
+}
+/* min -width 1200px and max-width 1400px */
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .image-container img {
+    height: 20rem;
+    width: 20rem;
+  }
+}
+
+/* signup page */
+.singup {
+  margin-top: 50px;
+}
+.form-container {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 1rem;
+  box-shadow: 0 2px 7px rgba(0, 0, 0);
+}
+/* sign in page */
+.signin {
+  margin-top: 50px;
+}
