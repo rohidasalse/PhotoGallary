@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch and Download Image as Blob</title>
+    <style>
+      #image-container {
+        text-align: center;
+        margin-top: 20px;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Fetch and Download Image Example</h1>
+    <div id="image-container">
+      <!-- Image will be dynamically inserted here -->
+    </div>
+
+    <script>
+      const accessToken = "qBHRbMZ_KQ94TNMoH0gpCGWIcOH2C14FaneOeuaIgMg"; // Replace with your Unsplash API access token
+      const imageId = "mR6DK2WPnF0"; // Replace with your image ID
+      const apiUrl = `https://api.unsplash.com/photos/${imageId}?client_id=${accessToken}`;
+
+      fetch(apiUrl)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          const imageUrl = data.urls.regular; // Get image URL from response
+
+          // Fetch the image as a Blob
+          return fetch(imageUrl)
+            .then((response) => response.blob())
+            .then((blob) => {
+              // Create an image element
+              const img = document.createElement("img");
+              img.src = URL.createObjectURL(blob); // Create a URL for the Blob
+              img.alt = data.alt_description || "Unsplash Image";
+
+              // Create a download link
+              const downloadLink = document.createElement("a");
+              downloadLink.href = URL.createObjectURL(blob); // Use the Blob URL for downloading
+              downloadLink.download = "unsplash_image.jpg"; // Filename for the downloaded image
+              downloadLink.style.display = "none"; // Hide the link
+
+              // Append the link to the body
+              document.body.appendChild(downloadLink);
+
+              // Add click event to the image
+              img.addEventListener("click", function () {
+                downloadLink.click(); // Trigger the download
+              });
+
+              // Append the image to the container
+              const container = document.getElementById("image-container");
+              container.innerHTML = ""; // Clear previous content
+              container.appendChild(img);
+            });
+        })
+        .catch((error) => console.error("Error fetching image:", error));
+    </script>
+  </body>
+</html>

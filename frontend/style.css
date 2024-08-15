@@ -4,8 +4,12 @@ body {
   padding: 0;
   font-family: "Shadows Into Light", cursive;
 }
+a {
+  text-decoration: none;
+}
 /* button */
 .btn-custom {
+  display: block;
   background-color: #74c0fc;
   color: #fff;
   border: none;
@@ -38,8 +42,24 @@ body {
 #SignIn {
   font-family: "Shadows Into Light", cursive;
 }
+.signina,
+.signupa {
+  text-decoration: none;
+}
 
 /* main */
+/* for image and button */
+.img-btn {
+  text-align: center;
+}
+.ancher {
+  text-decoration: none;
+  cursor: pointer;
+  font-family: "Shadows Into Light", cursive;
+}
+.ancher:hover {
+  color: black;
+}
 .container {
   display: flex;
   align-items: center;
